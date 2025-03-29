@@ -1,13 +1,71 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply bg-lucas-lightblue text-white hover:bg-lucas-lightblue/90;
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --primary: #1E2A5A;
+  --lucas-red: #E63946;
+  --lucas-lightblue: #45B7D1;
+  --lucas-orange: #F7931E;
+  --lucas-green: #8DC63F;
+  --lucas-turquoise: #45B7B1;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary\/10 {
+  background-color: rgba(30, 42, 90, 0.1);
+}
+
+.bg-lucas-lightblue\/10 {
+  background-color: rgba(69, 183, 209, 0.1);
+}
+
+.bg-lucas-orange\/10 {
+  background-color: rgba(247, 147, 30, 0.1);
+}
+
+.border-lucas-orange\/20 {
+  border-color: rgba(247, 147, 30, 0.2);
 }
